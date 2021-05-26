@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { HomeComponent } from './component/home/home.component';
 import { BlogComponent } from './component/blog/blog.component';
 import { AppareilViewComponent } from './component/appareil-view/appareil-view.component';
 import { AppareilComponent } from './component/appareil/appareil.component';
+
+import { AppareilService } from './service/appareil.service';
 
 const routes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
@@ -42,12 +45,12 @@ const routes: Routes = [
     // AppRoutingModule,
     FormsModule,
     NgbModule,
-    CanvasDomModule.forRoot(
-      [
-        GraphLineElement
-      ])
+    SweetAlert2Module.forRoot(),
+
     ],
-  providers: [],
+    providers: [
+      AppareilService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

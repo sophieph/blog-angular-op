@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Appareil } from '../../model/interface/appareil'
+import { AppareilService } from '../../service/appareil.service';
 
 @Component({
   selector: 'app-appareil-view',
@@ -8,19 +9,24 @@ import { Appareil } from '../../model/interface/appareil'
 })
 export class AppareilViewComponent implements OnInit {
 
-  date = new Date;
-  @Input()
-  appareils: Appareil[] = [
-    {id: 1, name: "Machine à laver", status: "on", created_at: this.date},
-    {id: 2, name: "Micro-ondes", status: "off", created_at: this.date},
-    {id: 3, name: "Sécheuse", status: "on", created_at: this.date}
-  ]
+  @Input() appareils: Appareil[];
 
-  constructor() { }
+  constructor(private appareilService: AppareilService) {
+    this.appareils = [];
+   }
 
   ngOnInit(): void {
+    this.appareils = this.appareilService.appareils;
   }
 
+  onOnAll(): void {
+    this.appareilService.switchOnAll();
+  }
+
+  onOffAll(): void {
+    this.appareilService.switchOffAll();
+  }
+  
   
 
 }
