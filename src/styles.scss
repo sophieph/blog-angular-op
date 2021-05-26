@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+html, body {
+    margin: 0;
+  }
+  
+  html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+  }
+  
+  body {
+    height: inherit;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    position: absolute;
+    margin: 0;
+    top: -4px;
+    right: 5px;
+  
+    color: transparent;
+    text-shadow: 0 0 4px white;
+  }
+
+  .myName {
+    position: absolute;
+  }
+
+.flex {
+    display: flex;
+}
+.float-r {
+    float: right;
+}
+.ml-a {
+    margin-left: auto;
+}
+.w-100 {
+    width: 100%;
+}

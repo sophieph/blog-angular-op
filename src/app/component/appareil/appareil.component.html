@@ -1,0 +1,20 @@
+<li class="list-group-item m-1">
+  <h4>Appareil : {{ appareil.name }}</h4>
+  <div class="flex">
+    <div
+      [ngClass]="{
+        square: true,
+        green: getStatus() === 'on',
+        red: getStatus() === 'off'
+      }"
+    ></div>
+    <div class="ml-1">
+      <h6>Statut : {{ getStatus() }}</h6>
+    </div>
+  </div>
+
+  <p>
+      <u>Date</u> : {{ appareil.created_at | date: "fullDate" }}
+    </p>
+  <input type="text" class="form-control" [(ngModel)]="appareil.name">
+</li>
