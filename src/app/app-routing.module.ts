@@ -5,10 +5,11 @@ import { BlogComponent } from './component/blog/blog.component';
 import { AppareilViewComponent } from './component/appareil-view/appareil-view.component';
 import { AuthComponent } from './component/auth/auth.component';
 import { SingleAppareilComponent } from './component/appareil/single-appareil/single-appareil.component';
+import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
-  { path: 'appareils', component: AppareilViewComponent },
-  { path: 'appareils/:id', component: SingleAppareilComponent },
+  { path: 'appareils',canActivate: [AuthGuardService],  component: AppareilViewComponent },
+  { path: 'appareils/:id',canActivate: [AuthGuardService],  component: SingleAppareilComponent },
   {
     path:'appareils', 
     loadChildren: () => import('./component/appareil-view/appareil-view.module')

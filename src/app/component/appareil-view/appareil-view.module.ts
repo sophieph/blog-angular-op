@@ -8,6 +8,7 @@ import { AppareilViewComponent } from './appareil-view.component';
 import { AppareilService } from 'src/app/service/appareil.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { AppareilModule } from '../appareil/appareil.module';
+import { AuthGuardService } from 'src/app/service/auth-guard.service';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   ], 
   providers: [
     AppareilService,
-    AuthService
+    AuthService,
+    AuthGuardService
   ],
   exports: [
     AppareilViewComponent

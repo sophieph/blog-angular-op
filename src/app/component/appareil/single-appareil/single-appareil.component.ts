@@ -11,7 +11,7 @@ import { Appareil } from '../../../model/interface/appareil'
 export class SingleAppareilComponent implements OnInit {
 
   appareil!: Appareil;
-  name!: string;
+  name!: number;
   status!: string;
   id!: number;
 
@@ -22,7 +22,7 @@ export class SingleAppareilComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     this.id = id;
-    // this.appareil = this.appareilService.getAppareilById(+id).name ;
+    // this.appareil = this.appareilService.getAppareilById(+id) ;
     // this.name = this.appareilService.getAppareilById(+id)?.name;
     // this.status = this.appareilService.getAppareilById(+id)?.status;
 
