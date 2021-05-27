@@ -15,14 +15,17 @@ import { BlogComponent } from './component/blog/blog.component';
 import { AppareilViewComponent } from './component/appareil-view/appareil-view.component';
 import { AppareilComponent } from './component/appareil/appareil.component';
 import { AppareilIdComponent } from './component/appareil/appareil-id/appareil-id.component';
+import { AuthComponent } from './component/auth/auth.component';
 
 import { NotFoundComponent } from './component/not-found/not-found.component';
 
 import { AppareilService } from './service/appareil.service';
+import { AuthService } from './service/auth.service';
 
 const routes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
   { path: 'appareils/:id', component: AppareilIdComponent },
+  { path: 'auth', component: AuthComponent},
   { path: 'blog', component: BlogComponent},
   { path: '', component: HomeComponent },
 ];
@@ -40,7 +43,8 @@ const routes: Routes = [
     AppareilViewComponent,
     AppareilComponent,
     AppareilIdComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AuthComponent
     ],
   imports: [
     BrowserModule,
@@ -52,7 +56,8 @@ const routes: Routes = [
 
     ],
     providers: [
-      AppareilService
+      AppareilService,
+      AuthService
     ],
   bootstrap: [AppComponent]
 })
