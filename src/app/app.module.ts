@@ -22,6 +22,8 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
 import { AppareilService } from './service/appareil.service';
 import { AuthService } from './service/auth.service';
 
+import { AppareilViewModule } from './component/appareil-view/appareil-view.module';
+
 const routes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
   { path: 'appareils/:id', component: AppareilIdComponent },
@@ -40,7 +42,7 @@ const routes: Routes = [
     CanvasComponent,
     HomeComponent,
     BlogComponent,
-    AppareilViewComponent,
+    // AppareilViewComponent,
     AppareilComponent,
     AppareilIdComponent,
     NotFoundComponent,
