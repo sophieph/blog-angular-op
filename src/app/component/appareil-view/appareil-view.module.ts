@@ -1,12 +1,36 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppareilViewComponent } from './appareil-view.component';
+import { RouterModule, Routes } from '@angular/router';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { FormsModule } from '@angular/forms';
 
+import { AppareilViewComponent } from './appareil-view.component';
+import { AppareilService } from 'src/app/service/appareil.service';
+import { AuthService } from 'src/app/service/auth.service';
+import { AppareilModule } from '../appareil/appareil.module';
+
+
+const routes: Routes = [
+  { path: '', component: AppareilViewComponent },
+];
 
 @NgModule({
-  declarations: [AppareilViewComponent],
+  declarations: [
+    AppareilViewComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppareilModule,  
+    SweetAlert2Module.forRoot(),
+    FormsModule,
+    RouterModule.forChild(routes),
+  ], 
+  providers: [
+    AppareilService,
+    AuthService
+  ],
+  exports: [
+    AppareilViewComponent
   ]
 })
 export class AppareilViewModule { }

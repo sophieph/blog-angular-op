@@ -1,5 +1,16 @@
-<h1>Authentification</h1>
 
-<div class="flex">
-    <button>Se connecter</button>
-</div>
+  <h1>Authentification</h1>
+  <button
+    class="btn btn-success m-2"
+    (click)="onSignIn()"
+    *ngIf="status === false"
+  >
+    Se connecter
+  </button>
+  <button
+    class="btn btn-success m-2"
+    (click)="onSignOut()"
+    *ngIf="status === true"
+  >
+    Se déconnecter
+  </button>

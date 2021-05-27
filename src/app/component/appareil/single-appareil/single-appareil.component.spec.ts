@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppareilIdComponent } from './appareil-id.component';
+import { SingleAppareilComponent } from './single-appareil.component';
 
-describe('AppareilIdComponent', () => {
-  let component: AppareilIdComponent;
-  let fixture: ComponentFixture<AppareilIdComponent>;
+describe('SingleAppareilComponent', () => {
+  let component: SingleAppareilComponent;
+  let fixture: ComponentFixture<SingleAppareilComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppareilIdComponent ]
+      declarations: [ SingleAppareilComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppareilIdComponent);
+    fixture = TestBed.createComponent(SingleAppareilComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

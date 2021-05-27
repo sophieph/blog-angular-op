@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+// import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
-// import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './component/blog/post-list/post-list.component';
 import { PostListItemComponent } from './component/blog/post-list-item/post-list-item.component';
@@ -14,23 +14,22 @@ import { HomeComponent } from './component/home/home.component';
 import { BlogComponent } from './component/blog/blog.component';
 import { AppareilViewComponent } from './component/appareil-view/appareil-view.component';
 import { AppareilComponent } from './component/appareil/appareil.component';
-import { AppareilIdComponent } from './component/appareil/appareil-id/appareil-id.component';
 import { AuthComponent } from './component/auth/auth.component';
-
 import { NotFoundComponent } from './component/not-found/not-found.component';
 
-import { AppareilService } from './service/appareil.service';
-import { AuthService } from './service/auth.service';
+// import { AppareilService } from './service/appareil.service';
+// import { AuthService } from './service/auth.service';
 
 import { AppareilViewModule } from './component/appareil-view/appareil-view.module';
+import { AppareilModule } from './component/appareil/appareil.module';
 
-const routes: Routes = [
-  { path: 'appareils', component: AppareilViewComponent },
-  { path: 'appareils/:id', component: AppareilIdComponent },
-  { path: 'auth', component: AuthComponent},
-  { path: 'blog', component: BlogComponent},
-  { path: '', component: HomeComponent },
-];
+// const routes: Routes = [
+  // { path: 'appareils', component: AppareilViewComponent },
+  // { path: 'appareils/:id', component: AppareilIdComponent },
+  // { path: 'auth', component: AuthComponent},
+  // { path: 'blog', component: BlogComponent},
+  // { path: '', component: HomeComponent },
+// ];
 
 
 
@@ -43,23 +42,25 @@ const routes: Routes = [
     HomeComponent,
     BlogComponent,
     // AppareilViewComponent,
-    AppareilComponent,
-    AppareilIdComponent,
+    // AppareilComponent,
+    // AppareilIdComponent,
     NotFoundComponent,
     AuthComponent
     ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
-    // AppRoutingModule,
+    // RouterModule.forRoot(routes),
+    AppRoutingModule,
+    AppareilViewModule,
+    AppareilModule, 
     FormsModule,
     NgbModule,
-    SweetAlert2Module.forRoot(),
+    // SweetAlert2Module.forRoot(),
 
     ],
     providers: [
-      AppareilService,
-      AuthService
+      // AppareilService,
+      // AuthService
     ],
   bootstrap: [AppComponent]
 })
