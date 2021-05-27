@@ -9,21 +9,22 @@ import { AppComponent } from './app.component';
 import { PostListComponent } from './component/blog/post-list/post-list.component';
 import { PostListItemComponent } from './component/blog/post-list-item/post-list-item.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CanvasDomModule } from 'angular-canvas';
-import { GraphLineElement } from './model/class/graph-line-element';
 import { CanvasComponent } from './component/canvas/canvas.component';
 import { HomeComponent } from './component/home/home.component';
 import { BlogComponent } from './component/blog/blog.component';
 import { AppareilViewComponent } from './component/appareil-view/appareil-view.component';
 import { AppareilComponent } from './component/appareil/appareil.component';
+import { AppareilIdComponent } from './component/appareil/appareil-id/appareil-id.component';
+
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 import { AppareilService } from './service/appareil.service';
 
 const routes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
-  // { path: 'auth', component: AuthComponent },
+  { path: 'appareils/:id', component: AppareilIdComponent },
   { path: 'blog', component: BlogComponent},
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
 ];
 
 
@@ -38,6 +39,8 @@ const routes: Routes = [
     BlogComponent,
     AppareilViewComponent,
     AppareilComponent,
+    AppareilIdComponent,
+    NotFoundComponent
     ],
   imports: [
     BrowserModule,

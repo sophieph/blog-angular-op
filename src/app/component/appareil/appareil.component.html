@@ -1,5 +1,6 @@
-<li class="list-group-item m-1 ">
+<li class="list-group-item m-1">
   <h4>Appareil : {{ appareil.name }}</h4>
+  <p><a [routerLink]="[appareil.id]">Détails</a></p>
   <div class="flex">
     <div
       [ngClass]="{
@@ -13,8 +14,6 @@
     </div>
   </div>
 
-  <p>
-      <u>Date</u> : {{ appareil.created_at | date: "fullDate" }}
-    </p>
-  <input type="text" class="form-control" [(ngModel)]="appareil.name">
+  <p><u>Date</u> : {{ appareil.created_at | date: "fullDate" }}</p>
+  <input type="text" class="form-control" [(ngModel)]="appareil.name" />
 </li>

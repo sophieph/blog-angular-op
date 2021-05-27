@@ -6,13 +6,13 @@ import { Appareil } from '../model/interface/appareil'
 })
 export class AppareilService {
 
-  date = new Date;
+  date = new Date;  
 
   appareils: Appareil[] = [
     {id: 1, name: "Machine à laver", status: "on", created_at: this.date},
     {id: 2, name: "Micro-ondes", status: "off", created_at: this.date},
     {id: 3, name: "Sécheuse", status: "on", created_at: this.date},
-    {id: 3, name: "Four", status: "off", created_at: this.date}
+    {id: 4, name: "Four", status: "off", created_at: this.date}
   ]
 
   constructor() { }
@@ -27,5 +27,14 @@ export class AppareilService {
     for(let appareil of this.appareils) {
       appareil.status = 'off';
     }
+  }
+
+  getAppareilById(id: number) {
+    const appareil = this.appareils.find(
+      (app) => {
+        return app.id === id;
+      }
+    );
+    return appareil;
   }
 }

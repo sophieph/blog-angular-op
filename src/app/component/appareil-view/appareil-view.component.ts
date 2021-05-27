@@ -10,6 +10,7 @@ import { AppareilService } from '../../service/appareil.service';
 export class AppareilViewComponent implements OnInit {
 
   @Input() appareils: Appareil[];
+  
 
   constructor(private appareilService: AppareilService) {
     this.appareils = [];

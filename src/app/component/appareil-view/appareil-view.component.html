@@ -21,8 +21,9 @@
     <h2>Mes appareils</h2>
     <ul class="list-group">
       <app-appareil
-        *ngFor="let appareil of appareils"
+        *ngFor="let appareil of appareils; "
         [appareil]="appareil"
+        
       ></app-appareil>
     </ul>
   </div>
