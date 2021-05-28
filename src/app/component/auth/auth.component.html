@@ -3,14 +3,14 @@
   <button
     class="btn btn-success m-2"
     (click)="onSignIn()"
-    *ngIf="status === false"
+    *ngIf="!status"
   >
     Se connecter
   </button>
   <button
-    class="btn btn-success m-2"
+    class="btn btn-danger m-2"
     (click)="onSignOut()"
-    *ngIf="status === true"
+    *ngIf="status"
   >
     Se déconnecter
   </button>

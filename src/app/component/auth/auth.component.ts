@@ -8,11 +8,12 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
 
-  status: boolean = false;
+  status!: boolean ;
 
   constructor(private authService : AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    this.status = this.authService.isAuth;
   }
 
   onSignIn() {
