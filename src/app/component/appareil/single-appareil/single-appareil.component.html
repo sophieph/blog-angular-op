@@ -1,3 +1,14 @@
 <h2>Appareil # {{ appareil.id }} - {{ appareil.name }}</h2>
-<p>Statut : {{ appareil.status }}</p>
+<div class="flex">
+    <div
+    [ngClass]="{
+      square : true,
+      green: appareil.status === 'on',
+      red: appareil.status === 'off'
+    }"
+  ></div>
+<div class="ml-5"> 
+     Statut : {{ appareil.status }}</div>
+</div>
+
 <p><a routerLink="/appareils">Retour à la liste</a></p>
